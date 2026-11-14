@@ -1,0 +1,34 @@
+{
+	"hooks": {
+		"SessionStart": [
+			{
+				"type": "command",
+				"command": "cat \"$(ls -t sessions/*.md | head -n 1)\""
+			}
+		],
+		"SessionEnd": [
+			{
+				"type": "command",
+				"command": "echo 'Kom ihåg att skriva en sessionslogg innan arbetspasset avslutas.'"
+			}
+		],
+		"PreToolUse": [
+			{
+				"type": "command",
+"command": "echo 'Kontrollera behörigheter innan filer ändras eller kommandon körs.'"
+			}
+		],
+		"PostToolUse": [
+			{
+				"type": "command",
+				"command": "echo 'Verktyget har körts. Kontrollera resultatet och eventuella fel.'"
+			}
+		],
+		"ErrorOccurred": [
+			{
+				"type": "command",
+				"command": "echo 'Ett fel inträffade. Kontrollera felmeddelandet innan du fortsätter.'"
+			}
+		]
+	}
+}
