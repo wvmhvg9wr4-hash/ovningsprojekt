@@ -14,7 +14,8 @@ function parseId(raw: string): number | null {
 // Lista kundens egna beställningar.
 orders.get("/orders", requireCustomer, async (req, res) => {
   const customerId = (req as AuthedRequest).customerId;
-  sendResult(res, await listOrders(customerId));
+  const limit = req.query.limit === undefined ? undefined : Number(req.query.limit);
+  sendResult(res, await listOrders(customerId, limit));
 });
 
 // Lägg en beställning.

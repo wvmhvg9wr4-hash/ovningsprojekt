@@ -81,14 +81,15 @@ export async function getOrder(orderId: number, customerId: number): Promise<Res
   );
   return ok({ ...order, lines: lines.rows });
 }
-export async function listOrders(customerId: number): Promise<Result<Order[]>> {
+export async function listOrders(customerId: number, limit?: number): Promise<Result<Order[]>> {
   const res = await db.query(
     `SELECT id, customer_id AS "customerId", status,
             discount_code AS "discountCode"
      FROM orders
      WHERE customer_id = $1
-     ORDER BY id`,
-    [customerId],
+     ORDER BY id
+     LIMIT $2`,
+    [customerId, limit ?? 100],
   );
 
   const orders: Order[] = [];

@@ -79,3 +79,12 @@ describe("GET /orders", () => {
     expect(res.body.every((order: { customerId: number }) => order.customerId === 1)).toBe(true);
   });
 });
+
+describe("GET /orders – sidindelning", () => {
+  it("visar bara en beställning när limit=1", async () => {
+    const res = await request(app).get("/orders?limit=1").set("X-Customer-Id", "1");
+
+    expect(res.status).toBe(200);
+    expect(res.body).toHaveLength(1);
+  });
+});
