@@ -69,4 +69,14 @@ Före och efter en framtida migration ska följande kontrolleras:
 
 - Alla fem karakteriseringstester ska vara godkända.
 - Nettopris, moms och totalpris ska vara oförändrade.
-- Best
+- Beställningar med och utan rabatt ska ge samma resultat som tidigare.
+- Avrundning av moms och totalpris ska kontrolleras.
+- Befintliga API-tester ska fortsätta fungera.
+- Återställningen ska testas i en separat testdatabas.
+
+## 7. Risker och säkerhetsåtgärder
+
+- Säkerhetskopiera databasen före migrationen.
+- Kontrollera att gamla och nya prisvärden stämmer överens.
+- Behåll den gamla beräkningen tills den nya lösningen är verifierad.
+- Testa återställningen innan ändringen används i produktion.
