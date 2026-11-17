@@ -6,13 +6,13 @@ Den här kodkartan beskriver hur projektets äldre prisberäkning fungerar, vilk
 
 ## 2. Berörda filer
 
-| Fil | Ansvar |
-|---|---|
-| `src/legacy/price_calc.py` | Beräknar nettopris, moms och totalpris för en beställning. |
-| `src/pricing/legacyPrice.ts` | Anropar Python-programmet från TypeScript och tar emot resultatet. |
-| `tests/test_price_calc.py` | Innehåller fem karakteriseringstester som kontrollerar befintligt beteende. |
-| `db/schema.sql` | Definierar databasens tabeller. |
-| `db/seed.sql` | Innehåller testdata för beställningar och rabatter. |
+| Fil                          | Ansvar                                                                      |
+| ---------------------------- | --------------------------------------------------------------------------- |
+| `src/legacy/price_calc.py`   | Beräknar nettopris, moms och totalpris för en beställning.                  |
+| `src/pricing/legacyPrice.ts` | Anropar Python-programmet från TypeScript och tar emot resultatet.          |
+| `tests/test_price_calc.py`   | Innehåller fem karakteriseringstester som kontrollerar befintligt beteende. |
+| `db/schema.sql`              | Definierar databasens tabeller.                                             |
+| `db/seed.sql`                | Innehåller testdata för beställningar och rabatter.                         |
 
 ## 3. Flöde
 

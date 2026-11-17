@@ -1,7 +1,7 @@
 ---
 name: Sakerhetsagent
 description: "Granskar säkerhetsrisker, API-behörigheter, känsliga uppgifter och databassäkerhet utan att ändra filer"
-tools: ['read', 'search']
+tools: ["read", "search"]
 model: GPT-4.1
 ---
 

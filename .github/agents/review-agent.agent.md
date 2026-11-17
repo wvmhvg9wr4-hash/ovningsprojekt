@@ -1,7 +1,7 @@
 ---
 name: Kodgranskare
 description: "Granskar kod, hittar buggar och säkerhetsrisker samt föreslår förbättringar utan att ändra filer"
-tools: ['read', 'search']
+tools: ["read", "search"]
 model: GPT-4.1
 ---
 

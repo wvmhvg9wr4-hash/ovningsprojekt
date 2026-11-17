@@ -1,7 +1,7 @@
 ---
 name: Testagent
 description: "Specialist på tester och testdriven utveckling"
-tools: ['read', 'search', 'edit', 'execute']
+tools: ["read", "search", "edit", "execute"]
 model: GPT-4.1
 ---
 
@@ -29,7 +29,9 @@ Express och PostgreSQL.
 - Använd projektets befintliga testverktyg.
 - Ändra inte databasschemat.
 - Förklara vad du har testat och varför.
+
 ## TDD och godkännande
+
 - Följ arbetsgången RED, GREEN och REFACTOR.
 - Kontrollera att RED-testet misslyckas av rätt anledning.
 - Innan GREEN kräver ändringar i produktionskod: pausa, förklara ändringen och be om mitt godkännande.

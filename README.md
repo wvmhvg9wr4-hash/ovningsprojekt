@@ -1,6 +1,6 @@
 # Övningsprojekt: butikens API
 
-Övningsprojektet för delkursen *AI-assisterad systemutveckling*. Det är kodbasen du bygger din rigg för i kursprojektet.
+Övningsprojektet för delkursen _AI-assisterad systemutveckling_. Det är kodbasen du bygger din rigg för i kursprojektet.
 
 Projektet innehåller två delar med olika ålder och kvalitet:
 
@@ -32,14 +32,14 @@ curl http://localhost:3000/orders/1042/price -H "X-Customer-Id: 1"
 
 ## Kommandon
 
-| Kommando | Vad det gör |
-|---|---|
-| `npm test` | Kör API-testerna mot testdatabasen. |
-| `npm run test:legacy` | Kör Python-testerna (finns inga än). |
-| `npm run lint` | ESLint med grundkonfiguration. |
-| `npm run typecheck` | TypeScript utan att bygga. |
-| `npm run format` | Formaterar koden med Prettier. |
-| `npm run db:reset` | Återställer båda databaserna till schema och testdata. |
+| Kommando              | Vad det gör                                            |
+| --------------------- | ------------------------------------------------------ |
+| `npm test`            | Kör API-testerna mot testdatabasen.                    |
+| `npm run test:legacy` | Kör Python-testerna (finns inga än).                   |
+| `npm run lint`        | ESLint med grundkonfiguration.                         |
+| `npm run typecheck`   | TypeScript utan att bygga.                             |
+| `npm run format`      | Formaterar koden med Prettier.                         |
+| `npm run db:reset`    | Återställer båda databaserna till schema och testdata. |
 
 ## Struktur
 

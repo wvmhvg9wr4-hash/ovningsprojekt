@@ -1,7 +1,7 @@
 ---
 name: Moderniseringsagent
 description: "Analyserar äldre TypeScript- och Python-kod, skapar kodkartor, skriver karakteriseringstester och planerar säker refaktorering"
-tools: ['read', 'search', 'edit', 'execute']
+tools: ["read", "search", "edit", "execute"]
 model: GPT-4.1
 ---
 
