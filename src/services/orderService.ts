@@ -81,3 +81,29 @@ export async function getOrder(orderId: number, customerId: number): Promise<Res
   );
   return ok({ ...order, lines: lines.rows });
 }
+export async function listOrders(customerId: number): Promise<Result<Order[]>> {
+  const res = await db.query(
+    `SELECT id, customer_id AS "customerId", status,
+            discount_code AS "discountCode"
+     FROM orders
+     WHERE customer_id = $1
+     ORDER BY id`,
+    [customerId],
+  );
+
+  const orders: Order[] = [];
+
+  for (const order of res.rows) {
+    const lines = await db.query(
+      `SELECT product, quantity, unit_price AS "unitPrice"
+       FROM order_lines
+       WHERE order_id = $1
+       ORDER BY id`,
+      [order.id],
+    );
+
+    orders.push({ ...order, lines: lines.rows });
+  }
+
+  return ok(orders);
+}

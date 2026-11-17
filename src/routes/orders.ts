@@ -1,7 +1,7 @@
 import { Router } from "express";
 import { AuthedRequest, requireCustomer } from "../auth";
 import { sendError, sendResult } from "../http";
-import { createOrder, getOrder } from "../services/orderService";
+import { createOrder, getOrder, listOrders } from "../services/orderService";
 import { calcPrice } from "../pricing/legacyPrice";
 
 export const orders = Router();
@@ -10,6 +10,12 @@ function parseId(raw: string): number | null {
   const id = Number(raw);
   return Number.isInteger(id) && id > 0 ? id : null;
 }
+
+// Lista kundens egna beställningar.
+orders.get("/orders", requireCustomer, async (req, res) => {
+  const customerId = (req as AuthedRequest).customerId;
+  sendResult(res, await listOrders(customerId));
+});
 
 // Lägg en beställning.
 orders.post("/orders", requireCustomer, async (req, res) => {

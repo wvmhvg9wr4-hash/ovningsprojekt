@@ -69,3 +69,13 @@ describe("GET /orders/:id/price", () => {
     expect(Number(res.body.total)).toBe(1187.5);
   });
 });
+describe("GET /orders", () => {
+  it("returnerar bara den inloggade kundens beställningar", async () => {
+    const res = await request(app).get("/orders").set("X-Customer-Id", "1");
+
+    expect(res.status).toBe(200);
+    expect(Array.isArray(res.body)).toBe(true);
+    expect(res.body.length).toBeGreaterThan(0);
+    expect(res.body.every((order: { customerId: number }) => order.customerId === 1)).toBe(true);
+  });
+});
