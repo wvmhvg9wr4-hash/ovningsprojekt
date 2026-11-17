@@ -1,4 +1,3 @@
-
 ---
 name: Kodgranskare
 description: "Granskar kod, hittar buggar och säkerhetsrisker samt föreslår förbättringar utan att ändra filer"

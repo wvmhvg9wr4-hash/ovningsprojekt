@@ -1,4 +1,3 @@
-
 ---
 name: Moderniseringsagent
 description: "Analyserar äldre TypeScript- och Python-kod, skapar kodkartor, skriver karakteriseringstester och planerar säker refaktorering"

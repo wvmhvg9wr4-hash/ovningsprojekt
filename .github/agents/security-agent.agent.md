@@ -1,4 +1,3 @@
-
 ---
 name: Sakerhetsagent
 description: "Granskar säkerhetsrisker, API-behörigheter, känsliga uppgifter och databassäkerhet utan att ändra filer"
