@@ -88,3 +88,12 @@ describe("GET /orders – sidindelning", () => {
     expect(res.body).toHaveLength(1);
   });
 });
+describe("GET /orders – statusfilter", () => {
+  it("visar bara beställningar med status paid", async () => {
+    const res = await request(app).get("/orders?status=paid").set("X-Customer-Id", "1");
+
+    expect(res.status).toBe(200);
+    expect(res.body).toHaveLength(1);
+    expect(res.body[0].status).toBe("paid");
+  });
+});
